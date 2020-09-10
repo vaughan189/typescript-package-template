@@ -1,0 +1,58 @@
+{
+  "name": "typescript-package-template",
+  "version": "1.0.0",
+  "description": "Typescript package boilerplate template code",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "coverage": "jest --coverage --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "lint": "eslint --fix-dry-run \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaughan189/typescript-package-template.git"
+  },
+  "keywords": [
+    "typescript",
+    "boilerplate",
+    "package",
+    "starter"
+  ],
+  "author": "Vaughan Po <vaughan188@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vaughan189/typescript-package-template/issues"
+  },
+  "homepage": "https://github.com/vaughan189/typescript-package-template#readme",
+  "devDependencies": {
+    "@jest/globals": "^26.0.0",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.13.5",
+    "@typescript-eslint/parser": "^2.31.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.19.0",
+    "jest": "^25.5.2",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "reflect-metadata": "^0.1.13",
+    "ts-jest": "^25.4.0",
+    "typescript": "^3.8.3"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "dependencies": {}
+}
